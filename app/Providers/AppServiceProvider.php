@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Customer\CustomerRepo;
+use App\Repositories\Customer\ICustomerRepo;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(ICustomerRepo::class, CustomerRepo::class);
     }
 }
