@@ -9,7 +9,7 @@ class CustomerRepo extends Repo implements ICustomerRepo
 {
 	public function __construct(Customer $customer)
 	{
-		$this->entity = $customer;
+		parent::__construct($customer);
 	}
 
 	public function isActive($id)
